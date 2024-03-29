@@ -32,8 +32,8 @@ function Calculator () {
   return (
     <div>
       <h1>React Calculator</h1>
-      <input value={value}/>
-      {isCalculated ? <p>{result.toString()}</p> : null}
+      <input value={value} readOnly/>
+      {isCalculated ? <div>{result.toString()}</div> : null}
       <Buttons dataFromChild = {callback} />
     </div>
   )
