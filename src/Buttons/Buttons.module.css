@@ -1,0 +1,12 @@
+.buttonsDiv {
+  padding-top: 20px;
+}
+
+button { /* Instead of creating a className for all buttons, we can use element selector*/
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
