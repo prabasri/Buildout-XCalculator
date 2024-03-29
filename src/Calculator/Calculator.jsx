@@ -6,21 +6,23 @@ function Calculator () {
   const [value, setValue] = useState("");
   const [result, setResult] = useState("");
   const [isCalculated, setIsCalculated] = useState(false);
-  // let result;
 
   const callback = (childData) => {
     if(childData === "C") {
       setValue("");
-      // result = "";
       setResult("")
       setIsCalculated(false);
 
     } else if(childData === "=") {
       console.log("Entered for calculation");
-      setIsCalculated(true);
       console.log(value);
-      setResult(eval(value))
-      console.log(typeof result);
+      setIsCalculated(true);
+      if(value === "") {
+        setResult("Error");
+      } else {
+        setResult(eval(value));
+      }
+
     } else {
       setValue(value + childData);
     }
@@ -33,7 +35,7 @@ function Calculator () {
     <div>
       <h1>React Calculator</h1>
       <input value={value} readOnly/>
-      {isCalculated ? <div>{result.toString()}</div> : null}
+      {isCalculated ? <div>{result}</div> : null}
       <Buttons dataFromChild = {callback} />
     </div>
   )
